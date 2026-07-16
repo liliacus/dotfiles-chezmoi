@@ -145,3 +145,6 @@ fi
 # export PATH="$HOME/.local/bin:$PATH"
 
 set -o vi
+
+eval "$(mise activate bash)"
+

@@ -142,9 +142,14 @@ if [ -d /home/linuxbrew/.linuxbrew/bin  ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 fi
 
-# export PATH="$HOME/.local/bin:$PATH"
 
 set -o vi
 
+## Activate "mise" 
 eval "$(mise activate bash)"
+
+## enable "devpod" support for "PodMan"
+if command -v podman > /dev/null ; then
+	export DOCKER_HOST=unix:///run/podman/podman.sock
+fi
 
